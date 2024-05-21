@@ -30,3 +30,14 @@ sayHiFromFunction((name) => {
 const sumar = (a, b) => {
     return a + b;
 };
+const enableAnimation = 200;
+let hero = {
+    name: "Carlos",
+    age: 24
+};
+function createHero(hero) {
+    const { name, age } = hero;
+    return { id: crypto.randomUUID(), name, age, isActive: true };
+}
+const roman = createHero({ name: "roman", age: 48 });
+roman.powerScale = "local";

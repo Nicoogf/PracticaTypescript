@@ -46,3 +46,58 @@ sayHiFromFunction((name:string)=>{
 const sumar = (a:number, b:number) : number => {
     return a + b
 }
+
+
+// const jugadores = ["juan", "pedro" ,"marcos"]
+
+// jugadores.forEach( jugador => {
+//     console.log(jugador.toUpperCase())
+// })
+
+// type Hero = {
+//     name : string,
+//     age : number,
+//     isActive: boolean
+// }
+
+// let hero : Hero = {
+//     name:"Carlos" ,
+//     age: 24
+// }
+
+
+// function CreateHero (hero: Hero) :Hero {
+//     return { name, age , }
+// }
+
+// const superman = CreateHero("Superman", 14)
+
+
+type HeroId = `${string}-${string}-${string}-${string}-${string}`
+
+type HeroPowerScale = "local" | "planetario" | "galactico" | "universal"
+const enableAnimation : boolean | number = 200 
+
+type Hero = {
+    readonly id?: HeroId ,
+    name : string,
+    age : number,
+    isActive?: boolean
+    powerScale? : HeroPowerScale
+}
+
+let hero : Hero = {
+    name:"Carlos" ,
+    age: 24
+}
+
+
+function createHero(hero:Hero) : Hero {
+    const {name,age } = hero
+    return{ id: crypto.randomUUID() , name, age , isActive: true }
+}
+
+const roman = createHero({name:"roman" , age:48 })
+
+roman.powerScale = "local"
+
