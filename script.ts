@@ -73,31 +73,68 @@ const sumar = (a:number, b:number) : number => {
 // const superman = CreateHero("Superman", 14)
 
 
-type HeroId = `${string}-${string}-${string}-${string}-${string}`
+// type HeroId = `${string}-${string}-${string}-${string}-${string}`
 
-type HeroPowerScale = "local" | "planetario" | "galactico" | "universal"
-const enableAnimation : boolean | number = 200 
+// type HeroPowerScale = "local" | "planetario" | "galactico" | "universal"
+// const enableAnimation : boolean | number = 200 
 
-type Hero = {
-    readonly id?: HeroId ,
-    name : string,
-    age : number,
-    isActive?: boolean
-    powerScale? : HeroPowerScale
+// type HeroBasicInfo = {
+//     name : string,
+//     age : number,
+// }
+
+// type HeroProperties = {
+//     readonly id?: HeroId ,    
+//     isActive?: boolean
+//     powerScale? : HeroPowerScale
+// }
+
+// type Hero = HeroBasicInfo & HeroProperties
+
+// const heroe : Hero = {
+//     name:"Adrian",
+//     age:35,
+//     id: crypto.randomUUID(),
+//     isActive: true,
+//     powerScale: "local"
+// }
+
+type HeroProperties = {
+    isActive : boolean ,
+    address : {
+        planet: string,
+        city: string
+    }
 }
 
-let hero : Hero = {
-    name:"Carlos" ,
-    age: 24
+const addresHero : HeroProperties["address"] = {
+    city:"Madrid",
+    planet: "Argentina"
 }
 
 
-function createHero(hero:Hero) : Hero {
-    const {name,age } = hero
-    return{ id: crypto.randomUUID() , name, age , isActive: true }
+
+const direccion = {
+    calle : 25,
+    altura : 124
 }
 
-const roman = createHero({name:"roman" , age:48 })
+type Direccion = typeof direccion
 
-roman.powerScale = "local"
+const DireccionCasa : Direccion = {
+    calle: 106 ,
+    altura:374
+}
+
+function crearAddress () {
+    return {
+        planet : "Tierra",
+        city : "Barcelona"
+    }
+}
+
+type Address =  ReturnType<typeof crearAddress>
+
+
+const lenguajes:(string | number )[] = [] 
 

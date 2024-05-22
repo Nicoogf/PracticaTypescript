@@ -30,14 +30,22 @@ sayHiFromFunction((name) => {
 const sumar = (a, b) => {
     return a + b;
 };
-const enableAnimation = 200;
-let hero = {
-    name: "Carlos",
-    age: 24
+const addresHero = {
+    city: "Madrid",
+    planet: "Argentina"
 };
-function createHero(hero) {
-    const { name, age } = hero;
-    return { id: crypto.randomUUID(), name, age, isActive: true };
+const direccion = {
+    calle: 25,
+    altura: 124
+};
+const DireccionCasa = {
+    calle: 106,
+    altura: 374
+};
+function crearAddress() {
+    return {
+        planet: "Tierra",
+        city: "Barcelona"
+    };
 }
-const roman = createHero({ name: "roman", age: 48 });
-roman.powerScale = "local";
+const lenguajes = [];
